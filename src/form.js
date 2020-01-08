@@ -8,7 +8,7 @@ export default class Form extends React.Component {
 
     change = e => {
         this.setState({
-            [e.target.location]: e.target.value 
+            [e.target.location]: e.target.value
         });
     };
 
@@ -16,31 +16,29 @@ export default class Form extends React.Component {
         e.preventDefault();
         this.props.onSubmit(this.state);
         this.setState({
-          StartLocation: '',
-          EndLocation: ''   
+            StartLocation: '',
+            EndLocation: ''
         });
     };
     render() {
         return (
-             <form>
-                 <input 
-                 location= "StartLocation"
-                 type="text"
-                 placeholder='StartLocation' 
-                 value={this.state.Startlocation}
-                 onchange={e => this.change(e)} 
-                 />
-                 <br />
-                <input 
-                location="EndLocation"
-                type="text"
-                placeholder='EndLocation' 
-                value={this.state.EndLocation}
-                onchange={e => this.change(e)}
+            <form>
+                <input location="StartLocation" type="text"
+                    placeholder='StartLocation'
+                    value={this.state.Startlocation}
+                    onchange={e => this.change(e)}
+                />
+                <br />
+                <input
+                    location="EndLocation"
+                    type="text"
+                    placeholder='EndLocation'
+                    value={this.state.EndLocation}
+                    onchange={e => this.change(e)}
                 />
                 <br />
                 <button onClick={e => this.onSubmit(e)}>Submit</button>
-             </form>
+            </form>
         );
     }
 }
